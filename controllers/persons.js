@@ -25,9 +25,9 @@ exports.getAllPerson = (req, res, next) => {
 exports.addPerson = (req, res, next) => {
   Person.create(
     {
-      name: req.body.name,
-      email: req.body.email,
-      country: req.body.country,
+      name: req.body.person.name,
+      email: req.body.person.email,
+      country: req.body.person.country,
     },
     (err, newPerson) => {
       console.log(newPerson);
@@ -58,9 +58,9 @@ exports.updatePerson = (req, res, next) => {
   Person.findByIdAndUpdate(
     req.params.id,
     {
-      name: req.body.name,
-      email: req.body.email,
-      country: req.body.country,
+      name: req.body.person.name,
+      email: req.body.person.email,
+      country: req.body.person.country,
     },
     (err, person) => {
       if (err) {
