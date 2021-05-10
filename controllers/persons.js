@@ -1,7 +1,7 @@
 const Person = require("../models/Person");
 
 exports.getPerson = (req, res, next) => {
-  Person.findOne(req.params.id, (err, person) => {
+  Person.findById(req.params.id, (err, person) => {
     if (err) {
       return res.status(500).json({ message: err });
     } else if (!person) {
